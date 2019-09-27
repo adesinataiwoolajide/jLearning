@@ -6,6 +6,7 @@
     }
     require("../../Database.php");
     require("../../Function.php");
+    $role = $_SESSION['role'];
 ?>
 <!doctype html>
 <html class="no-js " lang="en">

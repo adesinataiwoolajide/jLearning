@@ -17,12 +17,19 @@
                         </div>
                     </li>
                     <li class="header">HOMEPAGE</li>
-                    <li class="active open"><a href="./"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                    <li><a href="users.php"><i class="zmdi zmdi-account"></i><span>Users</span> </a></li>   
-                    <li><a href="departments.php"><i class="zmdi zmdi-account"></i><span>Departments</span> </a></li>
-                    <li><a href="courses.php"><i class="zmdi zmdi-account"></i><span>Courses</span> </a></li>   
-                    <li><a href="students.php"><i class="zmdi zmdi-account"></i><span>Students</span> </a></li>   
-                    <li><a href="../log-out.php"><i class="zmdi zmdi-account"></i><span>Log Out</span> </a></li>   
+                    <li class="active open"><a href="./"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li><?php 
+                    if($role == 'Admin'){ ?>
+                        <li><a href="users.php"><i class="zmdi zmdi-account"></i><span>Users</span> </a></li>   
+                        <li><a href="departments.php"><i class="zmdi zmdi-account"></i><span>Departments</span> </a></li>
+                        <li><a href="courses.php"><i class="zmdi zmdi-account"></i><span>Courses</span> </a></li>   
+                        <li><a href="students.php"><i class="zmdi zmdi-account"></i><span>Students</span> </a></li>   
+                         <?php 
+                    }else{ ?>
+                        <li><a href="courses.php"><i class="zmdi zmdi-account"></i><span>Courses</span> </a></li>   
+                        <li><a href="students.php"><i class="zmdi zmdi-account"></i><span>My Details</span> </a></li> <?php
+                    } ?>
+                    <li><a href="../log-out.php"><i class="zmdi zmdi-account"></i><span>Log Out</span> </a></li> 
+                    
                     
                 </ul>
             </div>

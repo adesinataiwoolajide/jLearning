@@ -5,8 +5,8 @@
             $_SESSION['success'] = $_SESSION['name']. " ". "Welcome to Admin Dashboard";
            redirect("portal/./");
         }elseif($access == 'Student'){
-            $_SESSION['success'] = $_SESSION['name']. " ". "Welcome to Leturer Dashboard";
-           redirect("student/./");
+            $_SESSION['success'] = $_SESSION['name']. " ". "Welcome to Student Dashboard";
+           redirect("portal/./");
         
         }else{
             $_SESSION['error'] = "Your are an Invalid User";
@@ -220,6 +220,15 @@
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getSingleDeptCourseList($dept_id)
+    {
+        $db = Database::getInstance()->getConnection();
+        $query = $db->prepare("SELECT * FROM courses WHERE dept_id=:dept_id");
+        $query->bindValue(":dept_id", $dept_id);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function getSingleCourse($course_code)
     {
         $db = Database::getInstance()->getConnection();
@@ -345,13 +354,22 @@
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getSingleStudentEmail($email)
+    function getSingleStudentEmailList($email)
     {
         $db = Database::getInstance()->getConnection();
         $query = $db->prepare("SELECT * FROM students WHERE student_email=:email");
         $query->bindValue(":email", $email);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function getSingleStudentEmail($email)
+    {
+        $db = Database::getInstance()->getConnection();
+        $query = $db->prepare("SELECT * FROM students WHERE student_email=:email");
+        $query->bindValue(":email", $email);
+        $query->execute();
+        return $query->fetch();
     }
 
     function getSingleStudent($matric_number)
@@ -398,6 +416,15 @@
         $db = Database::getInstance()->getConnection();
         $query = $db->prepare("SELECT * FROM department WHERE dept_id=:dept_id");
         $query->bindValue(":dept_id", $dept_id);
+        $query->execute();
+        return $query->fetch();
+    }
+
+    function getSingleDepo($depo)
+    {
+        $db = Database::getInstance()->getConnection();
+        $query = $db->prepare("SELECT * FROM department WHERE dept_id=:depo");
+        $query->bindValue(":depo", $depo);
         $query->execute();
         return $query->fetch();
     }
