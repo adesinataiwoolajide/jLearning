@@ -2,10 +2,10 @@
     session_start();
     if(!isset($_SESSION['id'])){
         $_SESSION['error'] = "Please Login with Your Details";
-        header('Location: .././');
+        header('Location: ./');
     }
-    require("../../Database.php");
-    require("../../Function.php");
+    require("../Database.php");
+    require("../Function.php");
     $role = $_SESSION['role'];
 ?>
 <!doctype html>

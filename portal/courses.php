@@ -155,7 +155,7 @@
                                                 ?>
                                             
                                             </td>
-                                            <td><a href="<?php echo '../../course_file/'.$courses['course_file'] ?>"
+                                            <td><a href="<?php echo '../course_file/'.$courses['course_file'] ?>"
                                                         target="_blank" class="btn btn-success">
                                                     <i class="fa fa-download"></i>Download
                                                 </a>

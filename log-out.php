@@ -1,8 +1,8 @@
 <?php
 	//starting session
 	session_start();
-	require("../Database.php");
-    require("../Function.php");
+	require("Database.php");
+    require("Function.php");
 	try{
 		$db = Database::getInstance()->getConnection();
 		

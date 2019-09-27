@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require("../../Database.php");
-    require("../../Function.php");
+    require("../Database.php");
+    require("../Function.php");
 
     try{
         if(isset($_POST['add_dept'])){

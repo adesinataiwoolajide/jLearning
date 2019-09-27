@@ -3,9 +3,9 @@
     
 
 	try{
-        require("../../Database.php");
-        require("../../Function.php");
-        $dir = "../../course_file/";
+        require("../Database.php");
+        require("../Function.php");
+        $dir = "../course_file/";
         
         $file_name = $_FILES['file']['name'];
         $file_size =$_FILES['file']['size'];

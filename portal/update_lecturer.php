@@ -1,9 +1,7 @@
 <?php
 	session_start();
-	require("../Dev/general/all_purpose_class.php");
-	include_once("../connection/connection.php");
-    require('../Dev/Database.php');
-    require('../Dev/autoload.php');
+	require("../Database.php");
+    require("../Function.php");
     
     $user = new User();
     $staff = new Staff;
